@@ -138,10 +138,14 @@ extension AuthViewController {
         ])
         
         NSLayoutConstraint.activate([
-            backGroundView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
-            backGroundView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            backGroundView.heightAnchor.constraint(equalTo: view.heightAnchor),
-            backGroundView.widthAnchor.constraint(equalTo: view.widthAnchor)
+            backGroundView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0),
+            backGroundView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
+            backGroundView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0),
+            backGroundView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0),
+//            backGroundView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
+//            backGroundView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+//            backGroundView.heightAnchor.constraint(equalTo: view.heightAnchor),
+//            backGroundView.widthAnchor.constraint(equalTo: view.widthAnchor)
         ])
         
         NSLayoutConstraint.activate([
