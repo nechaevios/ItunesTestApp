@@ -33,6 +33,7 @@ class AuthViewController: UIViewController {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.placeholder = "Enter email"
+        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -41,6 +42,7 @@ class AuthViewController: UIViewController {
         textField.borderStyle = .roundedRect
         textField.placeholder = "Enter password"
         textField.isSecureTextEntry = true
+        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -68,7 +70,7 @@ class AuthViewController: UIViewController {
     
     private var textFieldStackView = UIStackView()
     private var buttonsStackView = UIStackView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -94,19 +96,21 @@ class AuthViewController: UIViewController {
         view.backgroundColor = .white
         
         textFieldStackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField])
+        textFieldStackView.translatesAutoresizingMaskIntoConstraints = false
         textFieldStackView.axis = .vertical
         textFieldStackView.distribution = .fillProportionally
         textFieldStackView.spacing = 10
         
         buttonsStackView = UIStackView(arrangedSubviews: [signInButton, signUpButton])
+        buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
         buttonsStackView.axis = .horizontal
         buttonsStackView.spacing = 10
         buttonsStackView.distribution = .fillEqually
         
         view.addSubview(scrollView)
         scrollView.addSubview(backGroundView)
-        backGroundView.addSubview(textFieldStackView)
         backGroundView.addSubview(loginLabel)
+        backGroundView.addSubview(textFieldStackView)
         backGroundView.addSubview(buttonsStackView)
     }
     
@@ -131,21 +135,17 @@ extension AuthViewController {
     private func setConstraints() {
         
         NSLayoutConstraint.activate([
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8.0),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8.0),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8.0),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8.0)
         ])
         
         NSLayoutConstraint.activate([
-            backGroundView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0),
-            backGroundView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
-            backGroundView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 0),
-            backGroundView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0),
-//            backGroundView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
-//            backGroundView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-//            backGroundView.heightAnchor.constraint(equalTo: view.heightAnchor),
-//            backGroundView.widthAnchor.constraint(equalTo: view.widthAnchor)
+            backGroundView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
+            backGroundView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            backGroundView.heightAnchor.constraint(equalTo: view.heightAnchor),
+            backGroundView.widthAnchor.constraint(equalTo: view.widthAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -154,21 +154,21 @@ extension AuthViewController {
             textFieldStackView.leadingAnchor.constraint(equalTo: backGroundView.leadingAnchor, constant: 20),
             textFieldStackView.trailingAnchor.constraint(equalTo: backGroundView.trailingAnchor, constant: -20)
         ])
-
+        
         NSLayoutConstraint.activate([
             loginLabel.centerXAnchor.constraint(equalTo: backGroundView.centerXAnchor),
-            loginLabel.bottomAnchor.constraint(equalTo: textFieldStackView.topAnchor, constant: -30)
+            loginLabel.bottomAnchor.constraint(equalTo: textFieldStackView.topAnchor, constant: -30),
         ])
-
+        
         NSLayoutConstraint.activate([
             signUpButton.heightAnchor.constraint(equalToConstant: 40),
-            signInButton.heightAnchor.constraint(equalToConstant: 40)
+            signInButton.heightAnchor.constraint(equalToConstant: 40),
         ])
-
+        
         NSLayoutConstraint.activate([
             buttonsStackView.leadingAnchor.constraint(equalTo: backGroundView.leadingAnchor, constant: 20),
             buttonsStackView.topAnchor.constraint(equalTo: textFieldStackView.bottomAnchor, constant: 30),
-            buttonsStackView.trailingAnchor.constraint(equalTo: backGroundView.trailingAnchor, constant: -20)
+            buttonsStackView.trailingAnchor.constraint(equalTo: backGroundView.trailingAnchor, constant: -20),
         ])
     }
 }
