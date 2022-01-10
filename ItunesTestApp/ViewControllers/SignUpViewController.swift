@@ -158,11 +158,11 @@ class SignUpViewController: UIViewController {
             passwordTextField,
             passwordValidLabel
         ])
+        
         elementsStackView.translatesAutoresizingMaskIntoConstraints = false
         elementsStackView.axis = .vertical
         elementsStackView.distribution = .fillProportionally
         elementsStackView.spacing = 10
-        
         
         backGroundView.addSubview(loginLabel)
         backGroundView.addSubview(elementsStackView)

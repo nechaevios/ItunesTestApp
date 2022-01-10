@@ -7,8 +7,6 @@
 
 import UIKit
 
-import UIKit
-
 class UserInfoViewController: UIViewController {
 
     private let firstNameLabel: UILabel = {

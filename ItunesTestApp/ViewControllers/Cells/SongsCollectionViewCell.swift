@@ -32,7 +32,7 @@ class SongsCollectionViewCell: UICollectionViewCell {
                nameSongLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
                nameSongLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
                nameSongLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
-               nameSongLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+               nameSongLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
            ])
        }
 }
