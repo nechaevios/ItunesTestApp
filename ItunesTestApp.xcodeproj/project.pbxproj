@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8856FEA2786F24A00CDCBC4 /* DetailAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8856FE92786F24A00CDCBC4 /* DetailAlbumViewController.swift */; };
+		D8856FEC278C60CA00CDCBC4 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8856FEB278C60CA00CDCBC4 /* UserInfoViewController.swift */; };
+		D8856FEF278C612900CDCBC4 /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8856FEE278C612900CDCBC4 /* AlbumsTableViewCell.swift */; };
+		D8856FF1278C616B00CDCBC4 /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8856FF0278C616B00CDCBC4 /* SongsCollectionViewCell.swift */; };
+		D8856FF9278C63BE00CDCBC4 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8856FF8278C63BE00CDCBC4 /* UIViewController + Extension.swift */; };
+		D8856FFB278C671C00CDCBC4 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8856FFA278C671C00CDCBC4 /* UIStackView + Extension.swift */; };
 		D8FE48B1277CA22C00EBB276 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FE48B0277CA22C00EBB276 /* AppDelegate.swift */; };
 		D8FE48B3277CA22C00EBB276 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FE48B2277CA22C00EBB276 /* SceneDelegate.swift */; };
 		D8FE48BA277CA22D00EBB276 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8FE48B9277CA22D00EBB276 /* Assets.xcassets */; };
@@ -14,10 +20,15 @@
 		D8FE48CB277CA7B600EBB276 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FE48CA277CA7B600EBB276 /* AuthViewController.swift */; };
 		D8FE48CD277CAE1100EBB276 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FE48CC277CAE1100EBB276 /* SignUpViewController.swift */; };
 		D8FE48CF277CAE6100EBB276 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FE48CE277CAE6100EBB276 /* AlbumsViewController.swift */; };
-		D8FE48D1277E1ABD00EBB276 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8FE48D0277E1ABD00EBB276 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D8856FE92786F24A00CDCBC4 /* DetailAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumViewController.swift; sourceTree = "<group>"; };
+		D8856FEB278C60CA00CDCBC4 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		D8856FEE278C612900CDCBC4 /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
+		D8856FF0278C616B00CDCBC4 /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
+		D8856FF8278C63BE00CDCBC4 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		D8856FFA278C671C00CDCBC4 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		D8FE48AD277CA22C00EBB276 /* ItunesTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FE48B0277CA22C00EBB276 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8FE48B2277CA22C00EBB276 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,7 +38,6 @@
 		D8FE48CA277CA7B600EBB276 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		D8FE48CC277CAE1100EBB276 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D8FE48CE277CAE6100EBB276 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
-		D8FE48D0277E1ABD00EBB276 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +51,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D8856FED278C60EE00CDCBC4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D8856FEE278C612900CDCBC4 /* AlbumsTableViewCell.swift */,
+				D8856FF0278C616B00CDCBC4 /* SongsCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D8856FF2278C631200CDCBC4 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				D8856FF3278C631B00CDCBC4 /* UIKit */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		D8856FF3278C631B00CDCBC4 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				D8856FF8278C63BE00CDCBC4 /* UIViewController + Extension.swift */,
+				D8856FFA278C671C00CDCBC4 /* UIStackView + Extension.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		D8FE48A4277CA22C00EBB276 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +96,7 @@
 		D8FE48AF277CA22C00EBB276 /* ItunesTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				D8856FF2278C631200CDCBC4 /* Extentions */,
 				D8FE48C6277CA3A900EBB276 /* ViewControllers */,
 				D8FE48C8277CA3C200EBB276 /* App */,
 				D8FE48C7277CA3B300EBB276 /* Resources */,
@@ -72,9 +109,12 @@
 		D8FE48C6277CA3A900EBB276 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D8856FED278C60EE00CDCBC4 /* Cells */,
 				D8FE48CA277CA7B600EBB276 /* AuthViewController.swift */,
 				D8FE48CC277CAE1100EBB276 /* SignUpViewController.swift */,
 				D8FE48CE277CAE6100EBB276 /* AlbumsViewController.swift */,
+				D8856FE92786F24A00CDCBC4 /* DetailAlbumViewController.swift */,
+				D8856FEB278C60CA00CDCBC4 /* UserInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -100,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				D8FE48BB277CA22D00EBB276 /* LaunchScreen.storyboard */,
-				D8FE48D0277E1ABD00EBB276 /* Storyboard.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -165,7 +204,6 @@
 			files = (
 				D8FE48BD277CA22D00EBB276 /* LaunchScreen.storyboard in Resources */,
 				D8FE48BA277CA22D00EBB276 /* Assets.xcassets in Resources */,
-				D8FE48D1277E1ABD00EBB276 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,8 +214,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8856FF9278C63BE00CDCBC4 /* UIViewController + Extension.swift in Sources */,
 				D8FE48CB277CA7B600EBB276 /* AuthViewController.swift in Sources */,
+				D8856FEC278C60CA00CDCBC4 /* UserInfoViewController.swift in Sources */,
+				D8856FFB278C671C00CDCBC4 /* UIStackView + Extension.swift in Sources */,
+				D8856FEA2786F24A00CDCBC4 /* DetailAlbumViewController.swift in Sources */,
+				D8856FEF278C612900CDCBC4 /* AlbumsTableViewCell.swift in Sources */,
 				D8FE48B1277CA22C00EBB276 /* AppDelegate.swift in Sources */,
+				D8856FF1278C616B00CDCBC4 /* SongsCollectionViewCell.swift in Sources */,
 				D8FE48B3277CA22C00EBB276 /* SceneDelegate.swift in Sources */,
 				D8FE48CD277CAE1100EBB276 /* SignUpViewController.swift in Sources */,
 				D8FE48CF277CAE6100EBB276 /* AlbumsViewController.swift in Sources */,
