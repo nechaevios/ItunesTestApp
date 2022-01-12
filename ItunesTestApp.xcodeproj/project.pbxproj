@@ -14,6 +14,9 @@
 		D8856FF9278C63BE00CDCBC4 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8856FF8278C63BE00CDCBC4 /* UIViewController + Extension.swift */; };
 		D8856FFB278C671C00CDCBC4 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8856FFA278C671C00CDCBC4 /* UIStackView + Extension.swift */; };
 		D8BDCCD4278EE9C700CB7003 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDCCD3278EE9C700CB7003 /* String + Extension.swift */; };
+		D8BDCCD7278F274700CB7003 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDCCD6278F274700CB7003 /* UserDefaultsManager.swift */; };
+		D8BDCCDA278F280B00CB7003 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDCCD9278F280B00CB7003 /* UserModel.swift */; };
+		D8BDCCDC278F2D1900CB7003 /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDCCDB278F2D1900CB7003 /* AlertOk.swift */; };
 		D8FE48B1277CA22C00EBB276 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FE48B0277CA22C00EBB276 /* AppDelegate.swift */; };
 		D8FE48B3277CA22C00EBB276 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FE48B2277CA22C00EBB276 /* SceneDelegate.swift */; };
 		D8FE48BA277CA22D00EBB276 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8FE48B9277CA22D00EBB276 /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 		D8856FF8278C63BE00CDCBC4 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		D8856FFA278C671C00CDCBC4 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		D8BDCCD3278EE9C700CB7003 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
+		D8BDCCD6278F274700CB7003 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		D8BDCCD9278F280B00CB7003 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D8BDCCDB278F2D1900CB7003 /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
 		D8FE48AD277CA22C00EBB276 /* ItunesTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FE48B0277CA22C00EBB276 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8FE48B2277CA22C00EBB276 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +86,23 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		D8BDCCD5278F26FF00CB7003 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D8BDCCD6278F274700CB7003 /* UserDefaultsManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D8BDCCD8278F27F800CB7003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D8BDCCD9278F280B00CB7003 /* UserModel.swift */,
+				D8BDCCDB278F2D1900CB7003 /* AlertOk.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D8FE48A4277CA22C00EBB276 = {
 			isa = PBXGroup;
 			children = (
@@ -99,8 +122,10 @@
 		D8FE48AF277CA22C00EBB276 /* ItunesTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				D8856FF2278C631200CDCBC4 /* Extentions */,
 				D8FE48C6277CA3A900EBB276 /* ViewControllers */,
+				D8BDCCD5278F26FF00CB7003 /* Services */,
+				D8856FF2278C631200CDCBC4 /* Extentions */,
+				D8BDCCD8278F27F800CB7003 /* Models */,
 				D8FE48C8277CA3C200EBB276 /* App */,
 				D8FE48C7277CA3B300EBB276 /* Resources */,
 				D8FE48C9277CA3CC00EBB276 /* StoryBoards */,
@@ -220,10 +245,13 @@
 				D8856FF9278C63BE00CDCBC4 /* UIViewController + Extension.swift in Sources */,
 				D8FE48CB277CA7B600EBB276 /* AuthViewController.swift in Sources */,
 				D8BDCCD4278EE9C700CB7003 /* String + Extension.swift in Sources */,
+				D8BDCCD7278F274700CB7003 /* UserDefaultsManager.swift in Sources */,
 				D8856FEC278C60CA00CDCBC4 /* UserInfoViewController.swift in Sources */,
 				D8856FFB278C671C00CDCBC4 /* UIStackView + Extension.swift in Sources */,
 				D8856FEA2786F24A00CDCBC4 /* DetailAlbumViewController.swift in Sources */,
+				D8BDCCDC278F2D1900CB7003 /* AlertOk.swift in Sources */,
 				D8856FEF278C612900CDCBC4 /* AlbumsTableViewCell.swift in Sources */,
+				D8BDCCDA278F280B00CB7003 /* UserModel.swift in Sources */,
 				D8FE48B1277CA22C00EBB276 /* AppDelegate.swift in Sources */,
 				D8856FF1278C616B00CDCBC4 /* SongsCollectionViewCell.swift in Sources */,
 				D8FE48B3277CA22C00EBB276 /* SceneDelegate.swift in Sources */,
