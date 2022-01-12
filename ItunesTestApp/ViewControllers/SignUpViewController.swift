@@ -128,6 +128,10 @@ class SignUpViewController: UIViewController {
     private var elementsStackView = UIStackView()
     private let datePicker = UIDatePicker()
     
+    let nameValidType: String.ValidTypes = .name
+    let emailValidType: String.ValidTypes = .email
+    let passwordValidType: String.ValidTypes = .password
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -136,6 +140,12 @@ class SignUpViewController: UIViewController {
         setupDelegate()
         setupDataPicker()
         
+        registerKeyboardNotification()
+        
+    }
+    
+    deinit {
+        removeKeyboardNotification()
     }
     
     private func setupUI() {
@@ -192,6 +202,82 @@ class SignUpViewController: UIViewController {
         print("SignUpTap")
     }
     
+    private func setTextField(
+        textField: UITextField,
+        label: UILabel,
+        validType:String.ValidTypes,
+        validMessage: String,
+        wrongMessage: String,
+        string: String,
+        range: NSRange
+    ) {
+        
+        let text = (textField.text ?? "") + string
+        let result: String
+
+        if range.length == 1 {
+            let end = text.index(text.startIndex, offsetBy: text.count - 1)
+            result = String(text[text.startIndex..<end])
+        } else {
+            result = text
+        }
+
+        textField.text = result
+        
+        if result.isValid(validType: validType) {
+            label.text = validMessage
+            label.textColor = .blue
+        } else {
+            label.text = wrongMessage
+            label.textColor = .red
+        }
+    }
+    
+    private func setPhoneNumberMask(textField: UITextField, mask: String, string: String, range: NSRange) -> String {
+        
+        let text = textField.text ?? ""
+        let phone = (text as NSString).replacingCharacters(in: range, with: string)
+        let number = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        var result = ""
+        var index = number.startIndex
+        
+        for character in mask where index < number.endIndex {
+            if character == "X" {
+                result.append(number[index])
+                index = number.index(after: index)
+            } else {
+                result.append(character)
+            }
+        }
+        
+        if result.count == 18 {
+            phoneValidLabel.text = "Phone is valid"
+            phoneValidLabel.textColor = .blue
+        } else {
+            phoneValidLabel.text = "Phone is not valid"
+            phoneValidLabel.textColor = .red
+        }
+        
+        return result
+    }
+    
+    private func ageIsValid() -> Bool {
+        let calendar = NSCalendar.current
+        let dateNow = Date()
+        let birthday = datePicker.date
+        let age = calendar.dateComponents([.year], from: birthday, to: dateNow)
+        let ageYear = age.year
+        
+        guard let ageUser = ageYear else { return false }
+        
+        return (ageUser < 18 ?  false : true)
+    }
+    
+}
+
+// MARK: - Constraints
+
+extension SignUpViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8.0),
@@ -226,13 +312,92 @@ class SignUpViewController: UIViewController {
             signUpButton.widthAnchor.constraint(equalToConstant: 300)
         ])
     }
+}
+
+// MARK: - Keyboard Show Hide
+
+extension SignUpViewController {
+    private func registerKeyboardNotification() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil)
+    }
     
+    private func removeKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        let userInfo = notification.userInfo
+        guard let keyboardHeight = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        scrollView.contentOffset = CGPoint(x: 0, y: keyboardHeight.height / 2)
+    }
+    
+    @objc private func keyboardWillHide(notification: Notification) {
+        scrollView.contentOffset = CGPoint.zero
+    }
 }
 
 //MARK: - UITextFieldDelegate
 extension SignUpViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        switch textField {
+        case firstNameTextField: setTextField(
+            textField: firstNameTextField,
+            label: firstNameValidLabel,
+            validType: nameValidType,
+            validMessage: "Name is valid",
+            wrongMessage: "Only A-Z characters, min 1 character",
+            string: string,
+            range: range
+        )
+        case secondNameTextField: setTextField(
+            textField: secondNameTextField,
+            label: secondNameValidLabel,
+            validType: nameValidType,
+            validMessage: "Second name is valid",
+            wrongMessage: "Only A-Z characters, min 1 character",
+            string: string,
+            range: range
+        )
+        case emailTextField: setTextField(
+            textField: emailTextField,
+            label: emailValidLabel,
+            validType: emailValidType,
+            validMessage: "Email is valid",
+            wrongMessage: "Email is not valid",
+            string: string,
+            range: range
+        )
+        case passwordTextField: setTextField(
+            textField: passwordTextField,
+            label: passwordValidLabel,
+            validType: passwordValidType,
+            validMessage: "Password is valid",
+            wrongMessage: "min 1 A-Z, min 1 a-z, min 1 0-9, min 6 chars",
+            string: string,
+            range: range
+        )
+        case phoneNumberTextField: phoneNumberTextField.text = setPhoneNumberMask(
+            textField: phoneNumberTextField,
+            mask: "+X (XXX) XXX XX XX",
+            string: string,
+            range: range
+        )
+        default: break
+        }
         
         return false
     }
