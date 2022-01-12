@@ -87,14 +87,46 @@ class AuthViewController: UIViewController {
     
     @objc private func signUpButtonPressed() {
         let signUpVC = SignUpViewController()
-        signUpVC.modalPresentationStyle = .fullScreen
+        //signUpVC.modalPresentationStyle = .fullScreen
         self.present(signUpVC, animated: true)
     }
     
     @objc private func signInButtonPressed() {
-        let navVC = UINavigationController(rootViewController: AlbumsViewController())
-        navVC.modalPresentationStyle = .fullScreen
-        self.present(navVC, animated: true)
+        
+        
+        let mail = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        let user =  findUserDataBase(email: mail)
+        
+        if user == nil {
+            loginLabel.text = "User not found"
+            loginLabel.textColor = .red
+        } else if user?.password == password {
+            let navVC = UINavigationController(rootViewController: AlbumsViewController())
+            navVC.modalPresentationStyle = .fullScreen
+            self.present(navVC, animated: true)
+
+            guard let activeUser = user else { return }
+            DataBase.shared.saveActiveUser(user: activeUser)
+        } else {
+            loginLabel.text = "Wrong password"
+            loginLabel.textColor = .red
+        }
+        
+        
+    }
+    
+    private func findUserDataBase(email: String) -> User? {
+        let dataBase = DataBase.shared.users
+        print(dataBase)
+        
+        for user in dataBase {
+            if user.email == email {
+                return user
+            }
+        }
+        
+        return nil
     }
     
     private func setupViews() {
