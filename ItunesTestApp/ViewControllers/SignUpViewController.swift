@@ -244,14 +244,14 @@ class SignUpViewController: UIViewController {
         
         let text = (textField.text ?? "") + string
         let result: String
-
+        
         if range.length == 1 {
             let end = text.index(text.startIndex, offsetBy: text.count - 1)
             result = String(text[text.startIndex..<end])
         } else {
             result = text
         }
-
+        
         textField.text = result
         
         if result.isValid(validType: validType) {

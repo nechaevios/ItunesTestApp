@@ -8,7 +8,7 @@
 import UIKit
 
 class UserInfoViewController: UIViewController {
-
+    
     private let firstNameLabel: UILabel = {
         let label = UILabel()
         label.text = "First Name"
@@ -50,9 +50,9 @@ class UserInfoViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     private var stackView = UIStackView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,7 +64,7 @@ class UserInfoViewController: UIViewController {
     private func setupViews() {
         title = "Active User"
         view.backgroundColor = .white
-
+        
         stackView = UIStackView(arrangedSubviews: [firstNameLabel,
                                                    secondNameLabel,
                                                    ageLabel,
@@ -99,7 +99,7 @@ class UserInfoViewController: UIViewController {
 extension UserInfoViewController {
     
     private func setConstraints() {
-
+        
         NSLayoutConstraint.activate([
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
