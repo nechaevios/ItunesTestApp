@@ -79,6 +79,7 @@
 			children = (
 				D8856FF3278C631B00CDCBC4 /* UIKit */,
 				D8BDCCD3278EE9C700CB7003 /* String + Extension.swift */,
+				D8BDCCDB278F2D1900CB7003 /* AlertOk.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -105,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				D8BDCCD9278F280B00CB7003 /* UserModel.swift */,
-				D8BDCCDB278F2D1900CB7003 /* AlertOk.swift */,
 				D8A06396278F524700F1772C /* AlbumModel.swift */,
 				D804374B27903DEA00554870 /* SongsModel.swift */,
 			);
