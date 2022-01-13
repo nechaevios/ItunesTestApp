@@ -11,6 +11,8 @@ class DataBase {
     
     static let shared = DataBase()
     
+    private init() {}
+    
     enum SettingKeys: String {
         case users
         case activeUser

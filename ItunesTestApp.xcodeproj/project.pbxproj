@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D804374C27903DEA00554870 /* SongsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D804374B27903DEA00554870 /* SongsModel.swift */; };
 		D8856FEA2786F24A00CDCBC4 /* DetailAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8856FE92786F24A00CDCBC4 /* DetailAlbumViewController.swift */; };
 		D8856FEC278C60CA00CDCBC4 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8856FEB278C60CA00CDCBC4 /* UserInfoViewController.swift */; };
 		D8856FEF278C612900CDCBC4 /* AlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8856FEE278C612900CDCBC4 /* AlbumsTableViewCell.swift */; };
 		D8856FF1278C616B00CDCBC4 /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8856FF0278C616B00CDCBC4 /* SongsCollectionViewCell.swift */; };
 		D8856FF9278C63BE00CDCBC4 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8856FF8278C63BE00CDCBC4 /* UIViewController + Extension.swift */; };
 		D8856FFB278C671C00CDCBC4 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8856FFA278C671C00CDCBC4 /* UIStackView + Extension.swift */; };
+		D8A06397278F524700F1772C /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A06396278F524700F1772C /* AlbumModel.swift */; };
+		D8A06399278F535A00F1772C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A06398278F535A00F1772C /* NetworkManager.swift */; };
 		D8BDCCD4278EE9C700CB7003 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDCCD3278EE9C700CB7003 /* String + Extension.swift */; };
 		D8BDCCD7278F274700CB7003 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDCCD6278F274700CB7003 /* UserDefaultsManager.swift */; };
 		D8BDCCDA278F280B00CB7003 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDCCD9278F280B00CB7003 /* UserModel.swift */; };
@@ -27,12 +30,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D804374B27903DEA00554870 /* SongsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsModel.swift; sourceTree = "<group>"; };
 		D8856FE92786F24A00CDCBC4 /* DetailAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlbumViewController.swift; sourceTree = "<group>"; };
 		D8856FEB278C60CA00CDCBC4 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		D8856FEE278C612900CDCBC4 /* AlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewCell.swift; sourceTree = "<group>"; };
 		D8856FF0278C616B00CDCBC4 /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D8856FF8278C63BE00CDCBC4 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		D8856FFA278C671C00CDCBC4 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
+		D8A06396278F524700F1772C /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		D8A06398278F535A00F1772C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D8BDCCD3278EE9C700CB7003 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		D8BDCCD6278F274700CB7003 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		D8BDCCD9278F280B00CB7003 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -90,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				D8BDCCD6278F274700CB7003 /* UserDefaultsManager.swift */,
+				D8A06398278F535A00F1772C /* NetworkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -99,6 +106,8 @@
 			children = (
 				D8BDCCD9278F280B00CB7003 /* UserModel.swift */,
 				D8BDCCDB278F2D1900CB7003 /* AlertOk.swift */,
+				D8A06396278F524700F1772C /* AlbumModel.swift */,
+				D804374B27903DEA00554870 /* SongsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,9 +261,12 @@
 				D8BDCCDC278F2D1900CB7003 /* AlertOk.swift in Sources */,
 				D8856FEF278C612900CDCBC4 /* AlbumsTableViewCell.swift in Sources */,
 				D8BDCCDA278F280B00CB7003 /* UserModel.swift in Sources */,
+				D8A06399278F535A00F1772C /* NetworkManager.swift in Sources */,
 				D8FE48B1277CA22C00EBB276 /* AppDelegate.swift in Sources */,
 				D8856FF1278C616B00CDCBC4 /* SongsCollectionViewCell.swift in Sources */,
 				D8FE48B3277CA22C00EBB276 /* SceneDelegate.swift in Sources */,
+				D804374C27903DEA00554870 /* SongsModel.swift in Sources */,
+				D8A06397278F524700F1772C /* AlbumModel.swift in Sources */,
 				D8FE48CD277CAE1100EBB276 /* SignUpViewController.swift in Sources */,
 				D8FE48CF277CAE6100EBB276 /* AlbumsViewController.swift in Sources */,
 			);
