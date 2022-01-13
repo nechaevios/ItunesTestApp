@@ -139,9 +139,7 @@ class SignUpViewController: UIViewController {
         setConstraints()
         setupDelegate()
         setupDataPicker()
-        
         registerKeyboardNotification()
-        
     }
     
     deinit {
